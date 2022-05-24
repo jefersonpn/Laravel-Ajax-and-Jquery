@@ -23,7 +23,7 @@
        <link rel="stylesheet" href="css/jquery-jvectormap-2.0.5.css" type="text/css" media="screen"/>
 
        {{-- Jquery-map --}}
-       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>       <script src="js/jquery-jvectormap-2.0.5.min.js"></script>
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
        <script src="js/jquery-jvectormap-2.0.5.min.js"></script>
        <script src="js/jquery-jvectormap-world-mill-en.js"></script>
     </head>
