@@ -13,7 +13,7 @@ class UserController extends Controller
 
     public function login(Request $request){
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            return view('dashboard');
+            return view('master');
         }else{
             return view('login');
         }

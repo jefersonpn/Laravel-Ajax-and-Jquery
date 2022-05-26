@@ -20,16 +20,9 @@ use App\Http\Controllers\AlunosController;
 Route::get('/', [UserController::class, 'index'])->name('home.login');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/chamada', [ChamadaController::class, 'index'])->name('chamada');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/master', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/aluno-cadastro', [AlunosController::class, 'index'])->name('aluno-cadastro');
 Route::post('/aluno-store', [AlunosController::class, 'store'])->name('aluno-store');
-
-Route::get('/index', function () {
-    return view('layout/app');
-});
-
-
-
 
 Auth::routes();
 

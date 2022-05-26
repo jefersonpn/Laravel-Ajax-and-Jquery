@@ -14,7 +14,7 @@ class AlunosController extends Controller
      */
     public function index()
     {
-        return view('dashboard', ['link' => 'aluno-cadastro']);
+        //return view('master', ['link' => 'aluno-cadastro']);
     }
 
     /**
@@ -60,7 +60,7 @@ class AlunosController extends Controller
      
         $aluno->save();
 
-        return view('dashboard');
+        return view('dashboard', ['msg_added_aluno' => 'Aluno Cadastrado com Sucesso!']);
     }
 
     /**
