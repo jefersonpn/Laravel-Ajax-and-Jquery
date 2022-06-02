@@ -19006,6 +19006,11 @@ textarea[resize='horizontal']
     height: 30px;
 }
 
+.navbar-horizontal .navbar-brand #logo
+{
+    height: 200px;
+}
+
 .navbar-horizontal .navbar-dark .navbar-brand
 {
     color: #fff;
