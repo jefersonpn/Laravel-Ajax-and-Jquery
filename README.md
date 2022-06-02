@@ -1,3 +1,3 @@
 # Projects
 
-Laravel 9 app project is my first app develop by my self, without external help.
+Laravel 9 app project developing using Ajax and Jquery to dont reload the page.
