@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiTuscanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', [ApiTuscanyController::class, 'showCategories'])->name('categories.show');
+Route::get('/products', [ApiTuscanyController::class, 'showProducts'])->name('products.show');
