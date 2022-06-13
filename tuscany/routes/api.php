@@ -20,4 +20,3 @@ use App\Http\Controllers\Api\CategoriesController;
 }); 
 */
 
-Route::get('categories', [App\Http\Controllers\Api\CategoriesController::class, 'index'])->name('Categories.index');

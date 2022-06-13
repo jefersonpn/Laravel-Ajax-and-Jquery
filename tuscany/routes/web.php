@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApiTuscanyController;
+use App\Http\Resources\CategoryCollection;
+use App\Http\Controllers\Api\ProductsController;
+use App\Http\Controllers\Api\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,6 @@ use App\Http\Controllers\ApiTuscanyController;
 */
 
 
+Route::get('/', [App\Http\Controllers\Api\CategoriesController::class, 'index']);
+Route::get('/{code}', [App\Http\Controllers\Api\CategoriesController::class, 'GetProducts'])->name('send.code');
 
-Route::get('/', [ApiTuscanyController::class, 'showCategories'])->name('categories.show');
-Route::get('/products', [ApiTuscanyController::class, 'showProducts'])->name('products.show');
