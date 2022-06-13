@@ -16,7 +16,7 @@ use App\Http\Controllers\Api\CategoriesController;
 |
 */
 
-
-Route::get('/', [App\Http\Controllers\Api\CategoriesController::class, 'index']);
+Route::get('/', [App\Http\Controllers\Api\CategoriesController::class, 'principale']);
+//Route::get('/', [App\Http\Controllers\Api\CategoriesController::class, 'index']);
 Route::get('/{code}', [App\Http\Controllers\Api\CategoriesController::class, 'GetProducts'])->name('send.code');
 

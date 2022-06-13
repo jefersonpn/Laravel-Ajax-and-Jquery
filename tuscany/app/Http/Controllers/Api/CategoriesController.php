@@ -11,22 +11,17 @@ use Illuminate\Support\Facades\Http;
 
 class CategoriesController extends Controller
 {
-    public function __construct()
-    {
-        
 
-    }
-    
     public function index(Request $request)
     {
-       $categories= $this->GetParentCategory();
-       $categoriesFather= ($categories['categoriesFather']);
-       $categoriesChild= ($categories['categoriesChild']);
+        $categories= $this->GetParentCategory();
+        $categoriesFather= ($categories['categoriesFather']);
+        $categoriesChild= ($categories['categoriesChild']);
 
-       $data = $this->getAll();
+        $data = $this->getAll();
         dd($categoriesFather, $categoriesChild, $data);
 
-      /*  if (!$request->session()->exists('key')) {        
+        /*  if (!$request->session()->exists('key')) {        
             $this->getAll(); 
         }
 
@@ -35,7 +30,7 @@ class CategoriesController extends Controller
         return view('main')->with(['data'=>$data, 'categoriesFather'=> $categoriesFather, 'categoriesChild'=> $categoriesChild ]);
                     
     }
-   
+
     /* Getting only Parent_category CATEGORIES */
     public function GetParentCategory()
     {
@@ -67,8 +62,8 @@ class CategoriesController extends Controller
     }
     /* END- Getting only Parent_category CATEGORIES */
 
-   
-    /* public function GetProducts($code)
+
+    public function GetProducts($code)
     {
         $this->GetParentCategory();
 
@@ -79,7 +74,7 @@ class CategoriesController extends Controller
 
         return view('product')->with(['products_info' => $response->response, 'categories' => $this->GetParentCategory()]);
         
-    } */
+    }
 
     public function getApi($endpoint, $params = null, $urlFull = null)
     {
@@ -157,4 +152,30 @@ class CategoriesController extends Controller
         return $dataArray;
     }
     
+    // Principal exercise
+    public function principale()
+    {
+
+        $categories= $this->GetParentCategory();
+        $categoriesFather= ($categories['categoriesFather']);
+        $categoriesChild= ($categories['categoriesChild']);
+
+        
+        //dd($categoriesFather, $categoriesChild);
+
+        $response= $this->getAllData();
+        //dd($response);
+        return view('principale')->with(['response' => $response, 'categoriesFather'=> $categoriesFather, 'categoriesChild'=> $categoriesChild]);
+    }
+
+    public function getAllData()
+    {
+        $response = ApiTuscany::get('item-info?sku=1911_1_1')->json('response');
+        $productCode= $response['product_code'];
+        $productDetails = ApiTuscany::get('product-info?code='.$productCode)->json('response');
+        
+        return (['response'=>$response, 'productDetails'=> $productDetails]);
+    }
+
+    // END- Principal exercise
 }
